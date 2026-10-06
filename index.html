@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Morning Moves</title>
+<meta name="theme-color" content="#13a39a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Morning Moves">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- Today -->
+<section id="today" class="screen">
+  <header class="top">
+    <div><div class="hello" id="hello">Good morning</div><div class="date" id="todayDate"></div></div>
+    <button class="icon" id="openSettings" aria-label="Settings">⚙︎</button>
+  </header>
+  <div class="program" id="program"></div>
+  <div class="week" id="weekStrip"></div>
+  <div id="checkBanner"></div>
+  <div class="card workout" id="workoutCard"></div>
+</section>
+
+<!-- Exercises -->
+<section id="library" class="screen hidden">
+  <header class="top"><div class="hello">Exercises</div></header>
+  <div id="libList"></div>
+</section>
+
+<!-- Progress -->
+<section id="progress" class="screen hidden">
+  <header class="top"><div class="hello">Progress</div></header>
+  <div class="stats" id="stats"></div>
+  <div class="card" id="calendar"></div>
+  <div class="card" id="checks"></div>
+  <div class="card" id="recent"></div>
+</section>
+
+<nav class="tabs">
+  <button data-tab="today" class="on"><span>☀︎</span>Today</button>
+  <button data-tab="library"><span>☰</span>Exercises</button>
+  <button data-tab="progress"><span>▦</span>Progress</button>
+</nav>
+
+<!-- Workout player -->
+<section id="player" class="player hidden">
+  <div class="p-top">
+    <button class="icon" id="pClose" aria-label="End workout">✕</button>
+    <div class="p-block" id="pBlock"></div>
+    <button class="icon" id="pInfo" aria-label="How to">ⓘ</button>
+  </div>
+  <div class="p-bar"><i id="pBar"></i></div>
+  <div class="p-stage"><div class="p-side" id="pSide"></div><div class="p-fig" id="pFig"></div></div>
+  <div class="p-info">
+    <div class="p-status" id="pStatus"></div>
+    <h2 id="pName"></h2>
+    <div class="p-sub" id="pSub"></div>
+  </div>
+  <div class="p-mid">
+    <div class="p-next" id="pNext"></div>
+    <div class="p-timer">
+      <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="ring-bg"/><circle cx="60" cy="60" r="52" class="ring-fg" id="pRing"/></svg>
+      <div class="p-sec" id="pSec"></div>
+    </div>
+  </div>
+  <div class="p-controls">
+    <button class="ctl" id="pBack" aria-label="Back">⏮</button>
+    <button class="ctl big" id="pPlay" aria-label="Pause">⏸</button>
+    <button class="ctl" id="pSkip" aria-label="Skip">⏭</button>
+  </div>
+</section>
+
+<!-- Bottom sheet + modal -->
+<div class="sheet-wrap hidden" id="sheetWrap"><div class="sheet" id="sheet"></div></div>
+<div class="modal-wrap hidden" id="modalWrap"><div class="modal" id="modal"></div></div>
+
+<script src="figure.js"></script>
+<script src="exercises.js"></script>
+<script src="videos.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
